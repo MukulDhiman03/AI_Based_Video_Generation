@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {scenes} from './sample.mjs';
+const text=scenes.map(s=>s.narration).join(' ');
+const form=new FormData();
+form.set('file',new Blob([await readFile('public/generated/narration.mp3')],{type:'audio/mpeg'}),'narration.mp3');
+form.set('text',text);
+const r=await fetch('https://api.elevenlabs.io/v1/forced-alignment',{method:'POST',headers:{'xi-api-key':process.env.ELEVENLABS_API_KEY},body:form});
+const d=await r.json();
+if(!r.ok)throw new Error(`Alignment ${r.status}: ${JSON.stringify(d.detail)}`);
+const alignment={characters:d.characters.map(c=>c.text),character_start_times_seconds:d.characters.map(c=>c.start),character_end_times_seconds:d.characters.map(c=>c.end)};
+await writeFile('public/generated/forced-alignment.json',JSON.stringify(d,null,2));
+await writeFile('public/generated/speech.json',JSON.stringify({text,voice:'viraj',voiceId:process.env.ELEVENLABS_VOICE_VIRAJ_ENERGETIC_CONFIDENT,source:'ElevenLabs web interface, Eleven v4',alignment},null,2));
+console.log(JSON.stringify({alignedWords:d.words.length,alignmentLoss:d.loss}));

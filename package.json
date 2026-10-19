@@ -1,0 +1,51 @@
+{
+  "name": "vidsutra",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:clean-checkout": "node scripts/test-clean-checkout.mjs",
+    "test:auth": "node --env-file=.env --env-file=.env.local scripts/test-auth.mjs",
+    "invite": "node --env-file=.env --env-file=.env.local scripts/create-invitation.mjs",
+    "db:setup": "node --env-file=.env --env-file=.env.local scripts/setup-database.mjs",
+    "generate": "node --env-file=.env.local scripts/generate.mjs",
+    "render": "node scripts/render.mjs",
+    "align": "node --env-file=.env.local scripts/align.mjs",
+    "stills": "node scripts/render.mjs --stills",
+    "dev": "next dev --hostname 127.0.0.1 --port 3005",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3005",
+    "typecheck": "tsc --noEmit",
+    "test:ideas": "node scripts/test-ideas.mjs",
+    "test:ideas:integration": "node --env-file=.env --env-file=.env.local scripts/test-ideas.mjs --integration",
+    "test:content": "node scripts/test-content.mjs",
+    "test:content:integration": "node --env-file=.env --env-file=.env.local scripts/test-content.mjs --integration",
+    "test:visuals": "node scripts/test-visuals.mjs",
+    "test:visuals:integration": "node --env-file=.env --env-file=.env.local scripts/test-visuals.mjs --integration"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
+    "@better-auth/mongo-adapter": "^1.7.10",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@remotion/bundler": "^4.0.535",
+    "@remotion/renderer": "^4.0.535",
+    "better-auth": "^1.7.10",
+    "lucide-react": "^1.58.0",
+    "mongodb": "^7.7.0",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.535",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

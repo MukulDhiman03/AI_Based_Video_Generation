@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed-dim":"#6cdab5","primary-fixed":"#e4dfff","surface-variant":"#33343d","on-secondary-fixed":"#002117","on-tertiary":"#422d00","primary-fixed-dim":"#c7bfff","surface-dim":"#11131a","surface-container":"#1d1f27","outline-variant":"#474552","error":"#ffb4ab","on-error":"#690005","tertiary-container":"#c4a267","inverse-on-surface":"#2e3038","on-secondary":"#00382a","on-secondary-fixed-variant":"#00513e","on-surface":"#e2e2ec","tertiary":"#e6c184","tertiary-fixed-dim":"#e6c184","secondary-container":"#2ca281","on-primary-container":"#3a2d8b","on-secondary-container":"#003024","surface":"#11131a","surface-bright":"#373941","on-tertiary-fixed-variant":"#5b4311","on-tertiary-container":"#503806","on-primary-fixed-variant":"#443896","secondary":"#6cdab5","surface-container-low":"#191b23","on-error-container":"#ffdad6","background":"#11131a","inverse-surface":"#e2e2ec","on-tertiary-fixed":"#271900","tertiary-fixed":"#ffdea9","error-container":"#93000a","outline":"#928f9d","on-primary":"#2d1e7e","surface-container-highest":"#33343d","on-surface-variant":"#c9c4d3","on-background":"#e2e2ec","secondary-fixed":"#89f7d1","primary":"#c7bfff","surface-container-high":"#282a31","surface-tint":"#c7bfff","primary-container":"#a69bff","surface-container-lowest":"#0c0e15","inverse-primary":"#5c51af","on-primary-fixed":"#170065"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-lg":"1rem","space-xl":"1.5rem","space-sm":"0.5rem","gutter":"1rem","gutter-sm":"0.5rem","space-md":"0.75rem","margin":"1.5rem","margin-panel":"1rem"},"fontFamily":{"code":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Manrope"],"headline-lg":["Manrope"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"display":["Manrope"],"body-lg":["Inter"],"headline-sm":["Manrope"]},"fontSize":{"code":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col items-center justify-center p-space-lg selection:bg-primary-container selection:text-on-primary-container"><header class="mb-space-xl flex items-center justify-center"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="landing" href="#"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-high text-primary group-hover:bg-surface-container-highest transition-colors"><span class="material-symbols-outlined text-[18px]">play_shapes</span></span><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">VidSutra<span class="text-primary">.ai</span></span></a></header><main class="w-full max-w-md"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden rounded-xl bg-surface-container-low shadow-xl">
+<div class="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-16 w-72 h-72 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="relative p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-high transition-all duration-300" id="authAlert">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5 select-none" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm mb-1">
+<span class="font-headline-sm text-label-sm text-tertiary uppercase tracking-wider">Access Verification Alert</span>
+<button class="text-on-surface-variant hover:text-on-surface text-label-sm flex items-center transition-colors" onclick="document.getElementById('authAlert').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Invalid email or password. Please verify your credentials or reset your password if you need access.
+          </p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim">Studio Gateway</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Sign in to VidSutra</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Access your explainer studio and queued publications.</p>
+</div>
+<form class="flex flex-col gap-space-md" id="signInForm" onsubmit="event.preventDefault(); handleAuthSubmit();">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="emailInput">Work Email</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px] pointer-events-none">alternate_email</span>
+<input class="w-full bg-surface-container text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2.5 rounded-lg focus:outline-none focus:bg-surface-container-highest transition-colors placeholder:text-outline-variant" id="emailInput" placeholder="name@example.com" required="" type="email" value="creator@vidsutra.studio"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant" for="passwordInput">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-fixed transition-colors" href="#">Forgot password?</a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px] pointer-events-none">lock</span>
+<input class="w-full bg-surface-container text-on-surface font-body-md text-body-md pl-10 pr-12 py-2.5 rounded-lg focus:outline-none focus:bg-surface-container-highest transition-colors placeholder:text-outline-variant" id="passwordInput" placeholder="Enter your security phrase" required="" type="password" value="director-session-token"/>
+<button class="absolute right-space-sm p-1.5 rounded text-on-surface-variant hover:text-on-surface focus:outline-none flex items-center transition-colors" id="togglePasswordBtn" onclick="togglePasswordVisibility()" title="Toggle password visibility" type="button">
+<span class="material-symbols-outlined text-[18px]" id="passwordEyeIcon">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-space-sm cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container accent-primary-container cursor-pointer" id="rememberMe" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remember this workstation</span>
+</label>
+<span class="font-code text-code text-on-surface-variant/70">TLS 1.3 SECURE</span>
+</div>
+<button class="w-full mt-2 py-2.5 px-space-lg rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-sm hover:opacity-95 active:scale-[0.99] transition-all" id="submitBtn" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="pt-space-md mt-1 flex flex-col gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Private Beta Environment</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Don't have an account? VidSutra is currently private beta by invitation only.
+          </p>
+<div class="pt-1">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors" href="#">
+<span>Have an invite code? Enter invite</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</a>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 text-center leading-relaxed px-space-xs">
+          By signing in, you confirm your access to the VidSutra Private Beta under our
+          <a class="underline hover:text-on-surface transition-colors" href="#">Terms of Service</a> and 
+          <a class="underline hover:text-on-surface transition-colors" href="#">Privacy Policy</a>.
+        </p>
+</div>
+</div>
+</div>
+<script>
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('passwordInput');
+      const icon = document.getElementById('passwordEyeIcon');
+      if (!pwdInput || !icon) return;
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        pwdInput.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    function handleAuthSubmit() {
+      const alertBox = document.getElementById('authAlert');
+      const btn = document.getElementById('submitBtn');
+      if (!btn) return;
+      
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Authenticating...</span>';
+      btn.classList.add('opacity-75');
+
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('opacity-75');
+        if (alertBox) {
+          alertBox.classList.remove('hidden');
+        }
+      }, 700);
+    }
+  </script>
+</div></main><footer class="mt-space-xl text-center"><p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 VidSutra.ai • Private Beta Access Only</p></footer></body></html>

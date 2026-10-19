@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#443896","on-tertiary-container":"#503806","error":"#ffb4ab","on-primary-container":"#3a2d8b","on-secondary":"#00382a","on-surface-variant":"#c9c4d3","outline-variant":"#474552","tertiary":"#e6c184","secondary":"#6cdab5","inverse-on-surface":"#2e3038","primary-fixed-dim":"#c7bfff","surface-container-highest":"#33343d","surface-container":"#1d1f27","primary-container":"#a69bff","on-tertiary":"#422d00","secondary-container":"#2ca281","inverse-surface":"#e2e2ec","on-error":"#690005","error-container":"#93000a","surface-tint":"#c7bfff","outline":"#928f9d","on-error-container":"#ffdad6","on-background":"#e2e2ec","tertiary-container":"#c4a267","on-secondary-container":"#003024","primary":"#c7bfff","background":"#11131a","primary-fixed":"#e4dfff","secondary-fixed":"#89f7d1","inverse-primary":"#5c51af","on-surface":"#e2e2ec","surface":"#11131a","on-secondary-fixed-variant":"#00513e","on-tertiary-fixed":"#271900","tertiary-fixed":"#ffdea9","surface-container-lowest":"#0c0e15","on-tertiary-fixed-variant":"#5b4311","surface-container-low":"#191b23","on-primary":"#2d1e7e","on-secondary-fixed":"#002117","surface-bright":"#373941","surface-dim":"#11131a","on-primary-fixed":"#170065","surface-container-high":"#282a31","secondary-fixed-dim":"#6cdab5","tertiary-fixed-dim":"#e6c184","surface-variant":"#33343d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","space-xl":"1.5rem","gutter-sm":"0.5rem","margin-panel":"1rem","space-xs":"0.25rem","gutter":"1rem","margin":"1.5rem","space-lg":"1rem","space-sm":"0.5rem"},"fontFamily":{"body-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-sm":["Manrope"],"headline-md":["Manrope"],"display":["Manrope"],"label-sm":["Inter"],"label-md":["Inter"],"headline-lg":["Manrope"],"code":["JetBrains Mono"]},"fontSize":{"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"code":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between p-5 overflow-y-auto"><div class="flex flex-col gap-6"><div class="flex items-center gap-space-sm"><img alt="VidSutra Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U4GpjwcflDuCWAYxcZHxBboLKhbUflpbraKZaCQD2iA-Ui0RyHPqtys4-m1TsiZxSYymVvogE4Kv8i_37hj6K3yZlVmLV5hKSWzjsAXgtrTSi5raO_U5gvEIVxvjGeKJOJIhnJSHc-WKa5bMxLonQLbaH6QUKkEN4uFu5hJ_8SiZxDb1eV1ZM6kKYh9NH35PjWn7MxVkZK4Ppqy57ADN-CKYhDVzqAmxXNPvjjtacTlVa1th6rxFN2Qg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">VidSutra<span class="text-primary">.ai</span></span><span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">Studio</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-on-surface border-l-2 border-primary pl-2.5"><a aria-current="page" class="flex items-center gap-space-sm px-3 py-2 rounded-lg transition-colors font-body-md bg-surface-container-high text-on-surface border-l-2 border-primary pl-2.5" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Overview</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="create-content" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Create content</span></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></a><a class="flex items-center gap-space-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="explore-ideas" href="#"><span class="material-symbols-outlined text-[18px]">lightbulb</span><span>Explore ideas</span></a><a class="flex items-center gap-space-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="content-library" href="#"><span class="material-symbols-outlined text-[18px]">video_library</span><span>Content library</span></a><a class="flex items-center gap-space-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="publishing-calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>Publishing calendar</span></a><a class="flex items-center gap-space-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="connected-accounts" href="#"><span class="material-symbols-outlined text-[18px]">share</span><span>Connected accounts</span></a><a class="flex items-center gap-space-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a></nav></div><div class="flex flex-col gap-4 pt-4 border-t border-outline-variant/20"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 w-fit"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface">Private Beta</span></div><div class="flex flex-col gap-1.5 p-3 rounded-lg bg-surface-container border border-outline-variant/30"><div class="flex items-center justify-between font-label-sm text-label-sm"><span class="text-on-surface-variant">Quota</span><span class="text-on-surface font-mono">6 / 10 remaining</span></div><div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 60%"></div></div><div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant"><span class="text-[11px]">Resets in 12 days</span></div></div><div class="flex items-center gap-space-sm p-2 rounded-lg bg-surface-container/60 border border-outline-variant/20"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Sutra Creative</span><span class="font-code text-code text-secondary truncate">@vidsutra_official</span></div></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/85 backdrop-blur-xl border-b border-outline-variant/30 z-40 px-gutter"><div class="h-full max-w-7xl mx-auto flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-0"><img alt="VidSutra Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U4GpjwcflDuCWAYxcZHxBboLKhbUflpbraKZaCQD2iA-Ui0RyHPqtys4-m1TsiZxSYymVvogE4Kv8i_37hj6K3yZlVmLV5hKSWzjsAXgtrTSi5raO_U5gvEIVxvjGeKJOJIhnJSHc-WKa5bMxLonQLbaH6QUKkEN4uFu5hJ_8SiZxDb1eV1ZM6kKYh9NH35PjWn7MxVkZK4Ppqy57ADN-CKYhDVzqAmxXNPvjjtacTlVa1th6rxFN2Qg"/><div class="h-4 w-px bg-outline-variant/40 hidden sm:block"></div><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 border border-secondary-container/40"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary">Instagram Connected</span></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:brightness-110 transition-all" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>New Explainer</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface-container-lowest min-h-screen"><div class="w-full max-w-7xl mx-auto px-margin py-gutter-sm"><div class="flex flex-col w-full gap-space-xl pb-16">
+<!-- Top Welcome & Master Action Header -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg pt-2">
+<div class="flex flex-col gap-1.5 max-w-2xl">
+<div class="inline-flex items-center gap-2 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Production Studio / Overview</span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight">Your next idea, brought to life.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Transform complex concepts into engaging 9:16 reels and editorial graphics with one click.</p>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:opacity-95 shadow-sm transition-all group" type="button">
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-90">auto_awesome</span>
+<span>Create content</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lightbulb</span>
+<span>Explore ideas</span>
+</button>
+</div>
+</section>
+<!-- Highlight Showcase & Real-Time Job Queue Bento -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-stretch">
+<!-- Featured Completed Explainer Showcase (Span 8) -->
+<div class="xl:col-span-8 bg-surface-container rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Ready to Publish
+          </span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">graphic_eq</span>
+<span>Voice: Viraj</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 my-auto pt-2 pb-4">
+<!-- 9:16 Video Thumbnail Box -->
+<div class="md:col-span-5 relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-lowest flex items-center justify-center aspect-[9/16] max-h-[340px] mx-auto w-full max-w-[210px] shadow-xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High fidelity scientific technical 3D visual of oceanic tectonic depths with glowing fiber optic cables illuminated with violet data packets pulse-routing across digital continental junction nodes, dark cybernetic aesthetic with deep indigo water and soft lavender bioluminescent light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPtIVNd6WutE3CiyIE_q7aVdCNfK_kKl3e4n_ntTLS_3LoJVmE-SLZu1KrlvDwlfWdB8TatrDIfmXjwbI3t2r7D3nGSo1mXaC55_-xe_vnaT93OLwE4cvYFCkaMzpQpB8PVYoAu0k4yZokLvKfE9yO-RwfR_VFMFphGA6Cq_8K18CL4cFnIogg_qM9zcTgC-rd2KenBjAkiif4Y2_Fx1W_zLWgqsqLqIRbmqF3ze-XMmXqX1Kgzy6y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30"></div>
+<!-- Duration pill -->
+<div class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded-full font-code text-[11px] text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            0:58
+          </div>
+<!-- Ratio Pill -->
+<div class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant">
+            9:16
+          </div>
+<!-- Center Play Trigger -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 inset-x-3 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Vertical Reel preview</span>
+</div>
+</div>
+<!-- Explainer Detail & Context -->
+<div class="md:col-span-7 flex flex-col justify-between py-1">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant">60s Reel • English • High Definition</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+              How the Internet Works: From Undersea Cables to Your Screen
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-4 leading-relaxed">
+              An engaging, visual breakdown deciphering global subsea fiber infrastructure, optical repeater nodes, and BGP routing protocols. Crafted specifically for general tech enthusiasts with micro-animations and spatial sound design.
+            </p>
+<!-- Audio preview element -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex justify-between items-center text-on-surface-variant font-code text-[11px]">
+<span>Narrator: Viraj</span>
+<span class="text-secondary">Studio Voice</span>
+</div>
+<!-- Mini visual waveform -->
+<div class="h-4 flex items-end gap-[2px] opacity-80 overflow-hidden">
+<div class="w-1 bg-primary rounded-full h-[40%]"></div>
+<div class="w-1 bg-primary rounded-full h-[70%]"></div>
+<div class="w-1 bg-primary rounded-full h-[95%]"></div>
+<div class="w-1 bg-primary rounded-full h-[60%]"></div>
+<div class="w-1 bg-primary rounded-full h-[30%]"></div>
+<div class="w-1 bg-primary rounded-full h-[85%]"></div>
+<div class="w-1 bg-primary rounded-full h-[100%]"></div>
+<div class="w-1 bg-primary rounded-full h-[45%]"></div>
+<div class="w-1 bg-primary rounded-full h-[75%]"></div>
+<div class="w-1 bg-primary rounded-full h-[90%]"></div>
+<div class="w-1 bg-primary rounded-full h-[55%]"></div>
+<div class="w-1 bg-primary rounded-full h-[35%]"></div>
+<div class="w-1 bg-primary rounded-full h-[65%]"></div>
+<div class="w-1 bg-primary rounded-full h-[80%]"></div>
+<div class="w-1 bg-primary rounded-full h-[40%]"></div>
+<div class="w-1 bg-primary rounded-full h-[70%]"></div>
+<div class="w-1 bg-primary rounded-full h-[95%]"></div>
+<div class="w-1 bg-primary rounded-full h-[60%]"></div>
+<div class="w-1 bg-primary rounded-full h-[30%]"></div>
+<div class="w-1 bg-primary rounded-full h-[85%]"></div>
+<div class="w-1 bg-primary rounded-full h-[65%]"></div>
+<div class="w-1 bg-primary rounded-full h-[45%]"></div>
+<div class="w-1 bg-primary rounded-full h-[25%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-5 mt-2">
+<button class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:brightness-105 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Preview &amp; Publish</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-headline-sm text-headline-sm hover:bg-surface-bright transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Download MP4</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Stack: Friendly Reel Generator Monitor & Quota Panel (Span 4) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg justify-between">
+<!-- Friendly In-Progress Generator Card -->
+<div class="bg-surface-container rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden flex-1">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Generating your reel</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant">In Progress</span>
+</div>
+<div class="flex flex-col gap-3 my-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+            Why is the Sky Blue? Rayleigh Scattering Explained
+          </h3>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">record_voice_over</span>
+<span>Narrator: Monika Sogam</span>
+<span>•</span>
+<span>Science &amp; Nature</span>
+</div>
+<!-- Calm Stage Status Card -->
+<div class="bg-surface-container-low p-4 rounded-xl mt-1 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-on-surface font-medium flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-[18px] text-primary animate-spin">progress_activity</span>
+                Stage: Visual Rendering
+              </span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Almost done</span>
+</div>
+<!-- Calm progress track -->
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full relative transition-all duration-700" style="width: 68%;">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] pt-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+<span>You can safely leave this page</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-saves to your Content Library</span>
+<button class="text-primary hover:text-on-surface font-label-md text-label-md inline-flex items-center gap-1 transition-colors" type="button">
+<span>Details</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quota Summary Widget (Private Beta Allocation) -->
+<div class="bg-surface-container rounded-2xl p-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Private Beta Allocation</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary px-2.5 py-0.5 rounded-full bg-secondary/10 border border-secondary/20">Private Beta</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface leading-none">6</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">/ 10 remaining</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">60% Available</span>
+</div>
+<!-- Segmented Quota Dots Indicator -->
+<div class="grid grid-cols-10 gap-1.5 h-2.5 my-1">
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-primary-container rounded-sm"></div>
+<div class="bg-surface-container-highest rounded-sm"></div>
+<div class="bg-surface-container-highest rounded-sm"></div>
+<div class="bg-surface-container-highest rounded-sm"></div>
+<div class="bg-surface-container-highest rounded-sm"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span>4 creations consumed this period</span>
+<span class="text-[11px]">Resets 1st of next month</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Connected Distribution Channel Status Bar -->
+<div class="bg-surface-container rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[24px]">share</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Scheduled Distribution</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary">Instagram Connected</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct posting synchronized with verified handle <span class="font-code text-on-surface">@vidsutra_creative</span></p>
+</div>
+</div>
+<div class="flex items-center gap-6 bg-surface-container-low px-4 py-2.5 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Next Automated Queue</span>
+<span class="font-label-md text-label-md text-on-surface">Tomorrow, 6:00 PM IST</span>
+</div>
+<div class="h-6 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Target Asset</span>
+<span class="font-label-md text-label-md text-secondary truncate max-w-[200px]">Photosynthesis: The Solar Battery</span>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" title="Manage Queue" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</button>
+</div>
+</div>
+<!-- Recent Content Showcase Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Content</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-code text-[11px] text-on-surface-variant">3 items</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:text-on-surface transition-colors flex items-center gap-1" href="#">
+<span>View all in Library</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1: Quantum Computing -->
+<div class="bg-surface-container rounded-2xl p-5 flex flex-col justify-between hover:bg-surface-container-high/60 transition-all duration-200 group">
+<div class="flex flex-col gap-3">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Microscopic representation of illuminated quantum superposition bits and probabilistic quantum wave interference rings rendered in high contrast deep obsidian and glowing amethyst" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNqaUwps2RrqUNwuTd4pLgCGi-xHYhxMC_c6oQhSP0IuKgFJtMu03NIiqVDP7s_pERhQce0CGoPOGtmhCsdJ6SaTTjctNKP1bHPbd1Plpqs2oMN8BhdK8VTfZYG-7x-y7wbK15gcEmpp0k509cVAieWRywT8rERm9zatfRgTBS6dZJgDynaLD2AqMAhrcsgLUXF12SFwl_0003WJGF-2H-Pmc536rlbMZ74p_5VanaWnP2tKF6bWJg"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/80 backdrop-blur-sm px-2 py-0.5 rounded text-[11px] font-label-sm text-on-surface">
+              Reel • 30s
+            </div>
+<div class="absolute top-2 right-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 px-2 py-0.5 rounded text-[11px] font-label-sm text-secondary">
+              Published 2h ago
+            </div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-[12px]">
+<span>Hindi</span>
+<span>•</span>
+<span>Voice: Monika Sogam</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Quantum Computing: Qubits vs Bits
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Explaining coherent states and binary limits using an interactive coin-flip analogy and Bloch sphere animations.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Live on Instagram</span>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Photosynthesis -->
+<div class="bg-surface-container rounded-2xl p-5 flex flex-col justify-between hover:bg-surface-container-high/60 transition-all duration-200 group">
+<div class="flex flex-col gap-3">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Macro botanical architectural diagram of chlorophyll thylakoid membranes absorbing photon energy streams and releasing oxygen particles, editorial textbook design in emerald and deep ink hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSJ3FQ2eP_9fX2Dxt4rFGNK1b7-fzLdJ9CB1GZ6mirj5rK7nSzihb1vPJeKLuVzh8pPHdY4OdL3qr49WdT5nY2au6kkPV3pfZ_KPBGOcrQed9YLfwlUxHmHVXKpRWyOMT1Jmn6pMATiUoc4Hbwg0jze0b2gZLC03rK5PBnSZZo1GfcFwoCEdeiAlObU5rTgP1_ooyjnlsVYNVqGE9GjtXbZh5t9f3YNnNv8OzjOIUzNLu6WVy-HpMm"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/80 backdrop-blur-sm px-2 py-0.5 rounded text-[11px] font-label-sm text-on-surface">
+              Single Post • Square
+            </div>
+<div class="absolute top-2 right-2 bg-tertiary/20 backdrop-blur-sm border border-tertiary/30 px-2 py-0.5 rounded text-[11px] font-label-sm text-tertiary">
+              Scheduled
+            </div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-[12px]">
+<span>English</span>
+<span>•</span>
+<span>Static Graphic</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Photosynthesis: The Solar Battery
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              High-resolution botanical illustration and typographic breakdown of Calvin cycle chemical energy conversion.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span>Tomorrow 18:00</span>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Black Holes & Event Horizons -->
+<div class="bg-surface-container rounded-2xl p-5 flex flex-col justify-between hover:bg-surface-container-high/60 transition-all duration-200 group">
+<div class="flex flex-col gap-3">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Relativistic physics simulation rendering of a rotating Kerr black hole with glowing golden photon sphere gravitational lensing and deep space starry redshift backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4sil88cOgnMEdXijuajj-FrIbP7D6FN7DnqBzaPEYRb6Ta1h5GoLVKKprZ-PKqV5Muu99FgD38alAhfTaPFLa5B5zcBCd9eqiqNmk4X5vTg4hvsec5-Pw-8Kj6QxzMqScW95Pl6SCJ8v6alljeDdrbVIkG7AtvlBfE8j5A2gqjA8lXBb_b-FIaAWy5REVSJ8OCVaraigmqWml6KiGZexlJoXUEYc2t-OyxLuhILu5_FPrfkt_mYbd"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/80 backdrop-blur-sm px-2 py-0.5 rounded text-[11px] font-label-sm text-on-surface">
+              Reel • 90s
+            </div>
+<div class="absolute top-2 right-2 bg-primary/20 backdrop-blur-sm border border-primary/30 px-2 py-0.5 rounded text-[11px] font-label-sm text-primary">
+              Draft Ready
+            </div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-[12px]">
+<span>English</span>
+<span>•</span>
+<span>Voice: Viraj</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Black Holes &amp; Event Horizons
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Gravitational lensing visualizer demonstrating time dilation near extreme masses with voiceover sync.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Needs Audio Review</span>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div></div></main></div></body></html>
