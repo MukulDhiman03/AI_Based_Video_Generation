@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { NarrationStudio } from "./narration-studio";
 import { VisualStudio } from "./visual-studio";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -901,6 +902,19 @@ export function ContentComposer({
           enabled={!!currentPlan && !busy && !conflict}
         />
       )}
+      {item?.plan &&
+        item.planning?.status === "completed" &&
+        item.form.config.format === "reel" && (
+          <NarrationStudio
+            key={`narration:${item.id}:${item.revision}:${item.planning.requestId}`}
+            contentId={item.id}
+            revision={item.revision}
+            planRequestId={item.planning.requestId}
+            voice={item.form.config.voice}
+            targetDuration={item.form.config.duration}
+            enabled={!!currentPlan && !busy && !conflict}
+          />
+        )}
       <Link className="creator-back" href="/home">
         <ArrowRight size={14} /> Back to your dashboard
       </Link>

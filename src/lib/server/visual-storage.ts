@@ -11,7 +11,7 @@ export type VisualStorageRef = { backend: "r2"; key: string; bucket: string };
 export type VisualObjectStore = {
   write(
     bytes: Buffer,
-    owner: { userId: string; assetId: string },
+    owner: { userId: string; assetId: string; format?: "mp3" },
   ): Promise<VisualStorageRef>;
   read(ref: VisualStorageRef): Promise<Buffer>;
   remove(ref: VisualStorageRef): Promise<void>;
@@ -24,13 +24,14 @@ export function createR2ObjectStore(
 ): VisualObjectStore {
   return {
     async write(bytes, owner) {
-      const key = `visuals/${owner.userId}/${owner.assetId}.png`;
+      const audio = owner.format === "mp3";
+      const key = `${audio ? "narration" : "visuals"}/${owner.userId}/${owner.assetId}.${audio ? "mp3" : "png"}`;
       await client.send(
         new PutObjectCommand({
           Bucket: bucket,
           Key: key,
           Body: bytes,
-          ContentType: "image/png",
+          ContentType: audio ? "audio/mpeg" : "image/png",
           CacheControl: "private, no-store",
         }),
       );

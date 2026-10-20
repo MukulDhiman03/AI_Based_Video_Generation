@@ -1,0 +1,1 @@
+`narration-tone.mp3` is a four-second synthetic 440 Hz test tone, created locally with FFmpeg's `sine` source and libmp3lame. It contains no speech, personal data, or provider output. Tests pair it with explicitly fabricated timestamps to exercise the pipeline without consuming ElevenLabs credits. Production never uses this fixture.

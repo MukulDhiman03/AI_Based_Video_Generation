@@ -1,5 +1,5 @@
 import { timingSafeEqual } from "node:crypto";
-import { runVisualStep } from "@/lib/server/visual-runner";
+import { runMediaStep } from "@/lib/server/visual-runner";
 import { ideaResponse } from "@/lib/server/idea-http";
 export const runtime = "nodejs";
 export const maxDuration = 180;
@@ -16,10 +16,10 @@ async function run(request: Request) {
   )
     return ideaResponse({ error: "Not authorized." }, 401);
   try {
-    return ideaResponse({ processed: await runVisualStep() });
+    return ideaResponse({ processed: await runMediaStep() });
   } catch {
     return ideaResponse(
-      { error: "Visual processor temporarily unavailable." },
+      { error: "Media processor temporarily unavailable." },
       503,
     );
   }

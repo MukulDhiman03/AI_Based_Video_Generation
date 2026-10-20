@@ -101,6 +101,8 @@ export async function getDashboardData(userId: string): Promise<DashboardData> {
     planning: "Planning",
     illustrations: "Illustrations",
     narration: "Narration",
+    speech: "Narration",
+    alignment: "Caption alignment",
     animation: "Animation",
     rendering: "Rendering",
     checks: "Final checks",

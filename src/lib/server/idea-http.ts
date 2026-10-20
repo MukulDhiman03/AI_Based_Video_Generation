@@ -1,5 +1,6 @@
 import "server-only";
 import { z } from "zod";
+import { isAppOrigin } from "../app-origins";
 import { getCurrentSession } from "./session";
 
 import { IdeaError } from "./errors";
@@ -13,8 +14,7 @@ export function ideaResponse(value: unknown, status = 200) {
 export async function ideaUser(request: Request, write = false) {
   if (
     write &&
-    request.headers.get("origin") !==
-      new URL(process.env.BETTER_AUTH_URL!).origin
+    !isAppOrigin(request.headers.get("origin"), process.env.BETTER_AUTH_URL!)
   )
     throw new IdeaError("This request origin is not allowed.", 403);
   const session = await getCurrentSession();

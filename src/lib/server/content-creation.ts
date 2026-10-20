@@ -31,6 +31,7 @@ export type ContentDocument = {
   creationKey: string;
   revision: number;
   visualFence?: number;
+  narrationFence?: number;
   mutationId: string | null;
   form: ContentForm;
   title: string;

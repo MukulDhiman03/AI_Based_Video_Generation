@@ -10,7 +10,7 @@ npm run db:setup
 npm run dev
 ```
 
-Open http://127.0.0.1:3005. Signed-out users go to `/sign-in`; signed-in users go to `/home`. Successful sign-in/signup and returning authenticated users enter their dashboard. `/home` checks the session on the server. Account controls include working sign-out; the auth pages redirect active sessions back home.
+Open http://127.0.0.1:3005 (or http://localhost:3005). Local authentication and protected writes accept both aliases on the configured protocol and port. Production domains trust only the configured `BETTER_AUTH_URL` origin. Sessions remain host-only, so sign in separately if switching between the two addresses. Signed-out users go to `/sign-in`; signed-in users go to `/home`. Successful sign-in/signup and returning authenticated users enter their dashboard. `/home` checks the session on the server. Account controls include working sign-out; the auth pages redirect active sessions back home.
 
 ## Home dashboard
 
@@ -126,12 +126,34 @@ npm run test:visuals:integration -- --http # Also authenticated local API/privac
 
 The regression suite covers partial progress/retries, raw checkpoint reuse, style references, queue isolation, leases, stale-plan fences, private ownership, cooldowns, admission limits, raster validation, Hindi labels, and dimensions. R2 network access and live successful image generation remain unverified pending configuration/access.
 
+## Narration and caption alignment
+
+Saved **Reel** plans now have a narration panel below visuals. It uses only the approved Viraj (`bajNon13EdhNMndG3z05`) and Monika (`2zRM7PkgwBPiau2jvVXc`) voices with Eleven Multilingual v2. A continuous script is sent to ElevenLabs' [speech-with-timestamps endpoint](https://elevenlabs.io/docs/api-reference/text-to-speech/convert-with-timestamps). The service measures the returned MP3 using `music-metadata`, validates original character timestamps against the saved script, derives word/caption cues and contiguous 30 fps scene cuts, and stores the measured duration. Target duration remains a planning target; the app does not silently stretch or truncate speech.
+
+Original alignment is preferred. Normalized alignment is accepted only when its words match the saved script (Unicode NFC and whitespace differences are supported). Number expansion or other transcript changes that cannot be mapped safely fail alignment rather than invent timings. Saved audio is retained. Captions are grouped by scene, length, punctuation, and duration and can be downloaded as SRT or VTT; the preview follows audio playback. These are narration/caption previews, not rendered videos.
+
+Configure private R2 and `NARRATION_GENERATION_ENABLED=true` to enable speech. It defaults to `false` locally. This flag is independent of `VISUAL_GENERATION_ENABLED`; narration can be prepared while images remain paused. A read-only check on 19 October 2026 confirmed both voice endpoints returned 200, but the subscription endpoint returned 401. Available credits and synthesis entitlement remain unverified. The configured key needs access to [subscription information](https://elevenlabs.io/docs/api-reference/user/subscription/get) so the worker can check remaining allowance before requesting speech. No paid speech call was made during implementation.
+
+`GET/POST /api/content/[id]/narration` loads or starts/retries the current saved plan's job. Duplicate starts/replays reuse it. `GET /api/narration-media/[id]` serves private owner-only MP3 data with byte-range support; `?download=1` supplies an attachment. `GET /api/content/[id]/narration/captions?format=srt|vtt` downloads captions for the current completed job. API responses exclude raw character arrays, credentials, and R2 keys.
+
+The existing Next.js Node worker and authenticated `/api/internal/visual-worker` dispatcher now process both image and narration jobs, alternating between stages. The same serverless scheduling requirements apply. Narration uses a four-minute lease, at most three manual attempts, retry cooldowns, and six provider admissions per account per UTC hour. The credit preflight is conservative but is not an account-wide reservation against usage by other clients. No provider-level exactly-once billing is claimed. Provider timeout or failure before the durable audio checkpoint may have consumed credits; recovery does not automatically make a new paid call. Once audio and its timing source are checkpointed, alignment retries reuse them without generating speech again.
+
+Audio lives in R2; job state and timing metadata live in MongoDB. Transactional plan/revision fences stop stale workers attaching results after edits or replanning. The test suite uses a four-second synthetic test tone, mock ElevenLabs responses, and an in-memory R2 SDK transport. Production has no public mock switch. Live synthesis and R2 network transfers remain unverified pending configuration.
+
+```sh
+npm run test:narration
+npm run test:narration:integration
+npm run test:narration:integration -- --http # Start the local app first
+```
+
 ## Authentication validation
 
 ```sh
 npm run typecheck
 npm run build
 npm run test:auth  # Start the local app first; requires database access
+npm run test:origins
+npm run test:auth:origins # Signup/sign-in/draft writes on both local aliases
 ```
 
 The integration checks use temporary, uniquely identified synthetic records and remove their users, accounts, sessions, invitations, dashboard fixtures, and rate-limit entries in a cleanup block. They verify authentication and optional invitations, dashboard routing/protection, empty states, own-versus-foreign content/jobs/publications/accounts/allowance, private-field exclusion, cookie attributes, session persistence, sign-out, remember-me, origin rejection, rate limiting, and removal of old routes. Do not terminate the test process before cleanup completes.

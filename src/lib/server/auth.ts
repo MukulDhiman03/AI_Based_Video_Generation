@@ -5,6 +5,7 @@ import { mongodbAdapter } from "@better-auth/mongo-adapter";
 import type { MongoClient } from "mongodb";
 import { DATABASE_NAME } from "./database-config.mjs";
 import { getMongoClient } from "./mongodb";
+import { appOrigins } from "../app-origins";
 import { findInvitation, hashInvitation } from "./invitations";
 
 function createAuth(client: MongoClient) {
@@ -20,7 +21,7 @@ function createAuth(client: MongoClient) {
     baseURL,
     secret,
     database: mongodbAdapter(db, { client }),
-    trustedOrigins: [new URL(baseURL).origin],
+    trustedOrigins: appOrigins(baseURL),
     emailAndPassword: {
       enabled: true,
       minPasswordLength: 12,

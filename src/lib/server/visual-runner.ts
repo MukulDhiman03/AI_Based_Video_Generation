@@ -1,11 +1,27 @@
 import "server-only";
 import { processVisualStep } from "../visual-worker";
+import { processNarrationStep } from "../narration-worker";
+import { createNarrationWorkerDependencies } from "./narration-jobs";
 import { createVisualWorkerDependencies } from "./visual-jobs";
 const runtime = globalThis as typeof globalThis & {
   vidsutraVisualLoop?: boolean;
+  vidsutraNarrationTurn?: boolean;
 };
 export async function runVisualStep() {
   return processVisualStep(createVisualWorkerDependencies());
+}
+export async function runNarrationStep() {
+  return processNarrationStep(createNarrationWorkerDependencies());
+}
+export async function runMediaStep() {
+  runtime.vidsutraNarrationTurn = !runtime.vidsutraNarrationTurn;
+  const first = runtime.vidsutraNarrationTurn
+    ? runNarrationStep
+    : runVisualStep;
+  const second = runtime.vidsutraNarrationTurn
+    ? runVisualStep
+    : runNarrationStep;
+  return (await first()) || (await second());
 }
 export function startVisualWorker() {
   if (
@@ -19,10 +35,10 @@ export function startVisualWorker() {
   async function tick() {
     let worked = false;
     try {
-      worked = await runVisualStep();
+      worked = await runMediaStep();
     } catch {
       console.warn(
-        "Visual worker is temporarily unavailable; queued work remains saved.",
+        "Media worker is temporarily unavailable; queued work remains saved.",
       );
     }
     const timer = setTimeout(
